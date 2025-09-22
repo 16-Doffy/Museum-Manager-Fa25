@@ -1,0 +1,21 @@
+{
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "composite": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "bundler",
+    "baseUrl": "src",
+    "paths": {
+      "@shared/*": ["../../../shared/src/*"],
+      "@ui/*": ["../../../ui/src/*"],
+      "@utils/*": ["../../../utils/src/*"]
+    }
+  },
+  "include": ["src"],
+  "references": [
+    { "path": "../../../shared" },
+    { "path": "../../../ui" },
+    { "path": "../../../utils" }
+  ]
+}

@@ -1,23 +1,21 @@
-// import { defineConfig } from 'vite';
-// import react from '@vitejs/plugin-react';
-
-// export default defineConfig({
-//   plugins: [react()],
-//   root: 'src/admin-portal',
-//   build: {
-//     outDir: '../dist/admin-portal',
-//   },
-// });
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 5173, // Có thể thay đổi nếu bạn muốn
-    open: true, // Tự động mở trình duyệt khi chạy
+    port: 5173,
+    open: true,
   },
   build: {
-    outDir: 'dist', // Đường dẫn đến thư mục build
+    outDir: 'dist',
+  },
+  resolve: {
+    alias: {
+      '@shared': path.resolve(__dirname, '../../../shared/src'),
+      '@ui': path.resolve(__dirname, '../../../ui/src'),
+      '@utils': path.resolve(__dirname, '../../../utils/src'),
+    },
   },
 });
